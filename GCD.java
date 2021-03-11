@@ -43,6 +43,29 @@ public class GCD {
 		return lcm;
 	}
 
+	public static int gcdOfArray(int[] arr) {
+		if (null == arr || arr.length == 0)
+			return 0;
+		else {
+			int gcd = arr[0];
+			for(int i=1; i<arr.length; i++) {
+				gcd = gcd(gcd, arr[i]);
+			}
+			return gcd;
+		}
+	}
+
+	public static int lcmOfArray(int[] arr) {
+		if (null == arr || arr.length == 0)
+			return 0;
+		else {
+			int lcm = arr[0];
+			for(int i=1; i<arr.length; i++) {
+				lcm = lcm(lcm, arr[i]);
+			}
+			return lcm;
+		}
+	}
 
 	/**
 	* main Mehod to run 
@@ -54,5 +77,9 @@ public class GCD {
 		System.out.printf("lcm = (a * b) / gcd : a=%d, b=%d, a * b = %d\n", a, b, (a*b));
 		System.out.println("gdc = " + gcd(15, 3));
 		System.out.println("lcm = " + lcm(15, 3));
+
+		int[] arr = {6, 15, 3, 9};
+		System.out.println("gdc = " + gcdOfArray(arr));
+		System.out.println("lcm = " + lcmOfArray(arr));
 	}
 }
