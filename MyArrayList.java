@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class MyArrayList<E> {
 
-	private int size = 0;
     private static final int DEFAULT_CAPACITY = 10;
+	private int size = 0;
     private Object elements[];
 
     public MyArrayList() {
@@ -11,7 +11,9 @@ public class MyArrayList<E> {
     }
 
 
-
+    /**
+    * Mthod to increase array size dynamically
+    */
 	private void ensureCapacity() {
         int newSize = elements.length * 2;
         elements = Arrays.copyOf(elements, newSize);
@@ -25,7 +27,7 @@ public class MyArrayList<E> {
         elements[size++] = e;
     }
 
-	@SuppressWarnings("unchecked")
+
     public E get(int i) {
     	if (i>= size || i <0) {
             throw new IndexOutOfBoundsException("Index: " + i + ", Size " + i );
@@ -33,6 +35,16 @@ public class MyArrayList<E> {
         return (E) elements[i];
     }
 
+
+
+
+
+
+
+
+    /**
+    * Main method for execution 
+    **/
 	public static void main(String[] args) {
 
 		MyArrayList myList = new MyArrayList();
