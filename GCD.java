@@ -38,7 +38,7 @@ public class GCD {
 	* lcm of two numbers a, b is lcm = (a * b) / gcd
 	*/
 	public static int lcm(int a, int b) {
-		int gcd = rGcd(a, b);
+		int gcd = gcd(a, b);
 		int lcm = (a * b) / gcd;
 		return lcm;
 	}
@@ -78,7 +78,8 @@ public class GCD {
 		System.out.println("gdc = " + gcd(15, 3));
 		System.out.println("lcm = " + lcm(15, 3));
 
-		int[] arr = {6, 15, 3, 9};
+		// 6, 15, 3, 9
+		int[] arr = {2, 3, 6};
 		System.out.println("gdc = " + gcdOfArray(arr));
 		System.out.println("lcm = " + lcmOfArray(arr));
 	}
